@@ -164,31 +164,85 @@
 
 //=====================Question_no_13_Duplicate No in the Array====
 
-function findDuplicates(arr) {
-  let counts = {};
-  let duplicates = [];
+// function findDuplicates(arr) {
+//   let counts = {};
+//   let duplicates = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    let value = arr[i];
+//   for (let i = 0; i < arr.length; i++) {
+//     let value = arr[i];
 
-    // If the value is not in the counts object, initialize it with 1
-    if (!counts[value]) {
-      counts[value] = 1;
-    } else {
-      // If the value is already in the counts object, increment its count
-      counts[value]++;
+//     // If the value is not in the counts object, initialize it with 1
+//     if (!counts[value]) {
+//       counts[value] = 1;
+//     } else {
+//       // If the value is already in the counts object, increment its count
+//       counts[value]++;
 
-      // If this is the first time the value has been encountered, add it to the duplicates array
-      if (counts[value] === 2) {
-        duplicates.push(value);
-      }
-    }
+//       // If this is the first time the value has been encountered, add it to the duplicates array
+//       if (counts[value] === 2) {
+//         duplicates.push(value);
+//       }
+//     }
+//   }
+
+//   return duplicates;
+// }
+
+// let myArray = [1, 2, 3, 4, 2, 5, 6, 4, 7];
+// let result = findDuplicates(myArray);
+
+// console.log("Duplicate values:", result);
+
+// Map function
+
+// let array = [25, 26, 27, 28, 29, 30, 31, 32, 33];
+// let maparr = array.map((value , index ,arr)=>{
+// console.log(arr);
+//   return value;
+// })
+
+// console.log(maparr);
+
+// Filter Function
+// let array = [25, 26, 27, 28, 29, 30, 31]
+// let filtered = array.filter((val)=>{
+//   return val % 2 !== 0;
+
+// })
+// console.log(filtered);
+
+//reduced function
+
+// let array = [25, 26, 27, 28, 29, 30, 31]
+// let reduced = array.reduce((val_1,val_2)=>{
+//   return val_1 + val_2;
+// })
+// console.log(reduced);
+
+//greater value
+let array = [25, 26, 27, 28, 29, 30, 31];
+let largest = array[0];
+
+for (let i = 1; i < array.length; i++) {
+  let newarray = array[i];
+  if(largest < newarray){
+    largest = newarray;
   }
-
-  return duplicates;
 }
+console.log(largest);
+// let secondLar = []
+let removeLargest = array.indexOf(largest);
 
-let myArray = [1, 2, 3, 4, 2, 5, 6, 4, 7];
-let result = findDuplicates(myArray);
-
-console.log("Duplicate values:", result);
+if(removeLargest != -1){
+  array.splice(removeLargest,1)
+}
+console.log(array);
+let secondLar = array[0]
+for (let index = 0; index < array.length; index++) {
+  let finalarr = array[index]
+  if(secondLar < finalarr){
+    secondLar = finalarr;
+  }
+  
+}
+console.log(secondLar);
